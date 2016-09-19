@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import random
 
 x1,y1 = 0,0
-x2,y2 = 0.5,1
-x3,y3 = 1,0
+x2,y2 = 50,100
+x3,y3 = 100,0
 x,y = x1,y1
 
 xvec = [x1,x2,x3]

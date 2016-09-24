@@ -1,30 +1,24 @@
 import matplotlib.pyplot as plt
 import random
 
-x1,y1 = 0,0
-x2,y2 = 0,100
-x3,y3 = 100,100
-x4,y4 = 100,0
-x,y = x1,y1
+x,y = .5, .5
 
-xvec = [x1,x2,x3,x4]
-yvec = [y1,y2,y3,y4]
+xvec = [x]
+yvec = [y]
 
 for i in range(25000):
     rand = random.random()
 
-    if rand <= 1/4:
-        x = (x + x1) / 2
-        y = (y + y1) / 2
-    elif rand <= 2/4:
-        x = (x + x2) / 2
-        y = (y + y2) / 2
-    elif rand <=3/4:
-        x = (x + x3) / 2
-        y = (y + y3) / 2
+    if rand < 0.01:
+        x, y = 0.2*x, 0.16 * y;
+    elif rand < 0.5:
+        newx = (0.65 * x) + (0.02 * y)
+        newy = (-0.04 * x) + (0.75 * y) + .9
+        x, y = newx, newy
     else:
-        x = (x + x4) / 2
-        y = (y + y4) / 2
+        newx = (0.85 * x) + (-0.04 * y)
+        newy = (-0.08 * x) + (0.85 * y) + 1.6
+        x, y = newx, newy
 
     xvec.append(x)
     yvec.append(y)
